@@ -17,6 +17,7 @@ const greeting = (word) => {
 const speaker = (message, callback) => {
   message = 'hello 301 students!';
   callback = message.toUpperCase();
+  return callback;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,14 +37,18 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
+  arr = [];
   arr.push(value);
 }
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
+  arr = [];
   for (var i = 0; i<times; i++){
     arr.push(num);
+    addValues(arr, num);
   }
+  return arr;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,6 +65,7 @@ Return the modified array.
 
 const removeOne = (num, arr) => {
   // Solution code here...
+
 }
 
 const removeElements = (arr, callback) => {
@@ -140,13 +146,13 @@ Run your tests from the console: jest challenges-01.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-describe('Testing challenge 1', () => {
+xdescribe('Testing challenge 1', () => {
   test('It should return the message with all uppercase characters', () => {
     expect(speaker('hello 301 students!', greeting)).toStrictEqual('HELLO 301 STUDENTS!');
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should add the number 8 to the array five times', () => {
     expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
     expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
