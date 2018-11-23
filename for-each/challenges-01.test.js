@@ -42,11 +42,9 @@ const addValues = (arr, value) => {
 }
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
-  arr = [];
   for (var i = 0; i<times; i++){
     arr.push(num);
-    addValues(arr, num);
+    callback(addValues(arr, num));
   }
   return arr;
 }
@@ -64,11 +62,20 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const removeOne = (num, arr) => {
+  // arr = [];
+  // arr.push(num);
 
+  if (num % 3 === 2) {
+    arr.pop();
+  }
 }
 
 const removeElements = (arr, callback) => {
-  // Solution code here...
+  // arr = [];
+  for (var i = 0; i < arr.length; i++){
+    callback(arr[i], arr);
+  }
+  return arr;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -78,7 +85,9 @@ Write a function named removeWithForEach that produces the same output as challe
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithForEach = (arr, callback) => {
-  // Solution code here...
+  // arr.forEach(function(num % 3 === 2, i) {
+  //   arr.pop();
+  // });
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -158,14 +167,14 @@ xdescribe('Testing challenge 2', () => {
   });
 });
 
-describe('Testing challenge 3', () => {
+xdescribe('Testing challenge 3', () => {
   test('It should remove three elements from the array', () => {
     expect(removeElements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne)).toStrictEqual([1, 2, 3, 4, 5, 6, 7]);
     expect(removeElements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne).length).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should remove three elements from the array', () => {
     expect(removeWithForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne)).toStrictEqual([1, 2, 3, 4, 5, 6, 7]);
     expect(removeWithForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne).length).toStrictEqual(7);
