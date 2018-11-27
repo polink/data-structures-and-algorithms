@@ -37,33 +37,16 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   arr.sort(function sorta(a, b) {
-    var nameA = a.toLowerCase();
-    var nameB = b.toLowerCase();
-    if (nameA < nameB) {
+    if (a < b) {
       return -1;
     }
-    if (nameA > nameB) {
+    if (a > b) {
       return 1;
     }
-    if (nameA = nameB) {
       return 0;
-    };
   })
   return arr;
   };
-// items.sort(function(a, b) {
-//   var nameA = a.name.toUpperCase(); // ignore upper and lowercase
-//   var nameB = b.name.toUpperCase(); // ignore upper and lowercase
-//   if (nameA < nameB) {
-//     return -1;
-//   }
-//   if (nameA > nameB) {
-//     return 1;
-//   }
-
-//   // names must be equal
-//   return 0;
-// });
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -73,9 +56,17 @@ Write a function named sortByLength that takes in an array of strings and return
 ------------------------------------------------------------------------------------------------ */
 
 const sortByLength = (arr) => {
-  for (var i =0; i < arr.length; i++){
-    
-  }
+  // .lengthprop
+  arr.sort(function (a,b){
+    if (a.length < b.length) {
+      return -1;
+    }
+    if (a.length > b.length){
+      return 1;
+    }
+    return 0;
+  })
+return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -87,7 +78,18 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
-  // Solution code here...
+  arr.sort(function (a, b) {
+    var nameA = a.toLowerCase();
+    var nameB = b.toLowerCase();
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+      return 0;
+})
+return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -216,7 +218,7 @@ xdescribe('Testing challenge 1', () => {
   });
 });
 
-describe('Testing challenge 2', () => {
+xdescribe('Testing challenge 2', () => {
   test('It should sort strings alphabetically', () => {
     expect(alphabetize(['alphabet', 'Zebra', 'Alphabet', 'carrot'])).toStrictEqual([ 'Alphabet', 'Zebra', 'alphabet', 'carrot']);
     expect(alphabetize(['alphabet','Alphabet', 'carrot'])).toStrictEqual([ 'Alphabet', 'alphabet', 'carrot']);
@@ -235,7 +237,7 @@ xdescribe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should alphabetize without regard to capitalization', () => {
     expect(alphabetizeBetter(['Alice', 'apple', 'alert', 'Average'])).toStrictEqual([ 'alert', 'Alice', 'apple', 'Average' ]);
     const ans = alphabetizeBetter(['alphabet', 'Zebra', 'Alphabet', 'carrot']);
