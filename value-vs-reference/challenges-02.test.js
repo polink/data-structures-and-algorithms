@@ -46,7 +46,8 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
 const addBirthYearProperty = (obj, year) => {
-  Object.assign(obj, {yearBorn: year}) 
+  this.obj = ({yearBorn: this.year});
+  // Object.assign(obj, {yearBorn: year}) 
   //referenced this https://slack-redir.net/link?url=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F1168807%2Fhow-can-i-add-a-key-value-pair-to-a-javascript-object
   //realize after doing Challenge 4 that this  works in Challenge 3 only b/c there's only one object
 }
@@ -67,7 +68,10 @@ console.log(people[1].isAuthor) prints true
 const setStatusAsAuthor = (people) => {
   // Attempted to use spread syntax but can't recall what we discussed in class about it
   // this.people = ({...isAuthor: true});
-  Object.assign(people, {isAuthor: true})
+  // Object.assign(people, {isAuthor: true})
+  for (var i=0;i<people.length; i++){
+    people[i] = ({isAuthor: true});
+  }
 }
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -119,7 +123,7 @@ xdescribe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should add a property to an object', () => {
     const a = { fullName: 'Octavia Butler' };
     addBirthYearProperty(a, 1947);
@@ -128,7 +132,7 @@ xdescribe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should add a property to every object in an array', () => {
     const a = [{ fullName: 'Octavia Butler' }, { fullName: 'Ray Bradbury' }, { fullName: 'Kurt Vonnegut' }];
     setStatusAsAuthor(a);
@@ -139,7 +143,7 @@ xdescribe('Testing challenge 4', () => {
   });
 });
 
-describe('Testing challenge 5', () => {
+xdescribe('Testing challenge 5', () => {
   test('It should append the second array to the first', () => {
     const a = [1, 2, 3, 4];
     const b = [5, 6, 7, 8];
