@@ -187,6 +187,8 @@ For example:
 
 const removeEvenValues = (arr) => {
   // Solution code here...
+  
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -206,6 +208,7 @@ removeLastCharacters('Gregor', 9) returns ''
 
 const removeLastCharacters = (str, numberOfCharacters) => {
   // Solution code here...
+  
 };
 
 
