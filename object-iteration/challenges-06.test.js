@@ -65,7 +65,7 @@ let characters = [
 ]
 
 const totalCharacters = (arr) => {
-  // Solution code here...
+  return Object.values(characters).length;
 }
 
 /*------------------------------------------------------------------------------------------------
@@ -75,7 +75,14 @@ Write a function named getHouses that returns a new array containing the names o
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  for (let i in arr) {
+    houses.push(arr[i].house);
+    // console.log(houses);
+  }
+  // let properties = Object.values(arr);
+  // properties.forEach(house => {
+  //   houses.push(house);
+  // })
   return houses;
 }
 
@@ -89,7 +96,18 @@ hasChildrenValues(characters, 'Eddard') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
+  let childs;
+  
+  for (let i in arr) {
+    if (character == arr[i].name){
+      childs = Object.values(arr[i].children);
+    }
+  }
+  if (childs.length > 1){
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,7 +117,18 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
+  let childs;
+  
+  for (let i in arr) {
+    if (character == arr[i].name){
+      childs = Object.entries(arr[i].children);
+    }
+  }
+  if (childs.length > 1){
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -146,20 +175,20 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('something specific', () => {
     expect(totalCharacters(characters)).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('something specific', () => {
     expect(getHouses(characters)).toStrictEqual([ 'Stark', 'Arryn', 'Lannister', 'Targaryen', 'Tyrell', 'Stark', 'Snow' ]);
     expect(getHouses(characters).length).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenValues(characters, 'Daenarys')).toBeTruthy();
   });
@@ -169,7 +198,7 @@ xdescribe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenEntries(characters, 'Eddard')).toBeTruthy();
   });
