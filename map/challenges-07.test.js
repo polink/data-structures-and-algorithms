@@ -14,7 +14,7 @@ const forLoopTwoToThe = (arr) => {
   //Math.pow()
   let bleh = [];
   for (let i in arr) {
-    let x = Math.pow(arr[i], i+1);
+    let x = Math.pow(2, i+1);
     bleh.push(x);
   }
   console.log(bleh);
@@ -38,9 +38,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  let exp = arr.map(function(n){
-    Math.pow(n,i);
-  });
+  let exp = arr.map(n => Math.pow(2,n))
   return exp;
 }
 
@@ -176,7 +174,7 @@ Run your tests from the console: jest challenges-07.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-xdescribe('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should return two raised to the power of the integer', () => {
     expect(forLoopTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
     expect(forLoopTwoToThe([0, 4, 5]).length).toStrictEqual(3);
