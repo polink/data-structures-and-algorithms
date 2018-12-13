@@ -14,10 +14,11 @@ const forLoopTwoToThe = (arr) => {
   //Math.pow()
   let bleh = [];
   for (let i in arr) {
-    let x = Math.pow(2, i+1);
+    let x = Math.pow(2,arr[i]);
+    // console.log(x);
     bleh.push(x);
   }
-  console.log(bleh);
+  // console.log(bleh);
   return bleh;
 };
 
@@ -29,6 +30,13 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   // Solution code here...
+  let blah = [];
+  arr.forEach(function (value, idx) {
+    let x = Math.pow(2, value);
+    // console.log(x);
+    blah.push(x);
+  })
+  return blah;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -53,7 +61,9 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  // Solution code here...
+let letters = arr.map((val, idx) => val.charCodeAt())
+console.log(letters);
+return letters;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -185,7 +195,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return two raised to the power of the integer', () => {
     expect(forEachTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
     expect(forEachTwoToThe([0, 4, 5]).length).toStrictEqual(3);
@@ -207,7 +217,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return an array containing the character code for each letter', () => {
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([ 67, 111, 100, 101, 51, 48, 49 ]);
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1']).length).toStrictEqual(7);
