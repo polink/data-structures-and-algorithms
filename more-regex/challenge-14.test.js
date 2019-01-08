@@ -12,7 +12,9 @@ const toTitleCase = (arr) => {
   let str;
   let sub = [];
   for (let i in arr){
-    str = arr[i].substring(0,1).toUpperCase() + arr[i];
+    // str = arr[i].substring(0,1).toUpperCase() + arr[i];
+    str = arr[i].charAt(0).toUpperCase() + arr[i].substring(1);
+    // charAt, added substring to uppercased letter
     sub.push(str);
   }
   console.log(sub);
@@ -91,7 +93,19 @@ let starWarsData = [{
 }]
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+  // if 'Luke Skywalker'.mass < 172 then return this person in a string
+  let sw = [];
+  let ans;
+  let str;
+  for (let i in arr){
+    if (arr[i].mass > 78){
+       sw.push(arr[i].name); 
+    // push into sw array 
+    }
+  }
+  ans = sw.join(' - ')
+  console.log(ans);
+  return ans;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -109,8 +123,34 @@ This data could be could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
-};
+  console.log(arr.sort(name));
+  // console.log(arr.reverse(price));
+  if (property === 'price'){
+    arr.sort((a, b) => {
+      if (a.price < b.price) {
+        return -1;
+      }
+      if (a.price > b.price) {
+        return 1;
+      }
+        return 0;
+    })
+    return arr;
+    }
+
+  if (property === 'name'){
+    arr.sort((a, b) => {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name >b.name) {
+        return 1;
+      }
+        return 0;
+    })
+    return arr;
+  }
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -125,7 +165,7 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-// Solution code here...
+// regex vs .includes
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -171,14 +211,14 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return only characters that are bigger than Luke', () => {
     expect(biggerThanLuke(starWarsData)).toStrictEqual('Darth Vader - Pex Kylar');
     expect(biggerThanLuke([])).toStrictEqual('');
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should sort items by a price', () => {
 
     expect(sortBy('price', [
