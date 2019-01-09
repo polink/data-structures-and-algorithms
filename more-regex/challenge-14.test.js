@@ -166,6 +166,12 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
 // regex vs .includes
+  let testStr = 'https://';
+  if (url.includes(testStr)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -247,7 +253,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should check if url is https', () => {
 
     expect(isSecure('http://www.insecure.com')).toBe(false); 
