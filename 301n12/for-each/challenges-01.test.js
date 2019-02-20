@@ -10,15 +10,28 @@ Then, write a function named speaker that takes in a string and a callback funct
 
 const greeting = (word) => {
   word = 'hello 301 students!';
-  word = word.toUpperCase();
+  run1 = word.forEach((value, idx) => {
+    value.toUpperCase();
+  });
+  console.log(run1)
   return word;
 }
 
+// forEach isn't working here b/c I'm trying to operate it on a string - it's an array function.
+// const speaker = (message, callback) => {
+//   message = 'hello 301 students!';
+//   callback = message.toUpperCase();
+//   return callback;
+// }
+
 const speaker = (message, callback) => {
   message = 'hello 301 students!';
-  callback = message.toUpperCase();
-  return callback;
+  callback = message.forEach( function (value, idx) {
+    value.toUpperCase();
+  });
+  console.log(callback);
 }
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
