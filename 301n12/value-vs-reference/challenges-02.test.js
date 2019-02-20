@@ -46,7 +46,12 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
 const addBirthYearProperty = (obj, year) => {
+<<<<<<< HEAD:value-vs-reference/challenges-02.test.js
   this.obj = ({yearBorn: this.year});
+=======
+  obj.yearBorn = year;
+  
+>>>>>>> 2521388cbd0140967f87f57ffac7012b3b57b050:301n12/value-vs-reference/challenges-02.test.js
   // Object.assign(obj, {yearBorn: year}) 
   //referenced this https://slack-redir.net/link?url=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F1168807%2Fhow-can-i-add-a-key-value-pair-to-a-javascript-object
   //realize after doing Challenge 4 that this  works in Challenge 3 only b/c there's only one object
@@ -104,7 +109,7 @@ Run your tests from the console: jest challenges-02.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-xdescribe('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should append without modifying the oiginal', () => {
     const a = 'This is my story.';
     const b = appendTheEnd(a);
@@ -114,7 +119,7 @@ xdescribe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should append by modifying the original', () => {
     const a = ['Yes', 'it', 'is'];
     appendFirstToLast(a); //fixed the "original" typo. --K
