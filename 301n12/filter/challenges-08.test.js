@@ -47,7 +47,10 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  //take in one array as a filter, then have a for loop within filter to take in and have output for notInFirstArray
+  // console.log(forbiddenValues);
+  // console.log(arr);
+  let pushPush = []
+  arr.filter((forbiddenValues, idx) => {return !(forbiddenValues[idx] === arr[idx])});
 };
 
 /* ------------------------------------------------------------------------------------------------
