@@ -17,7 +17,12 @@ class LinkedList{
     constructor(){
         this.head = null;
     }
-
+// to do 3/20
+//    ran base code, insertHead, append and Tail works, as well as find.
+    // insertAfter borks, need to check insertBefore
+// to do 3/10
+// clean up use of this.head - looks like i'm using it wrong
+// double-check logic around inserts - re-read CF LL article?
 
     insertAtHead(value){
         const newNode = new Node(value);
@@ -26,6 +31,7 @@ class LinkedList{
 
         // 2 - reassigning to HEAD
         this.head = newNode;
+        console.log('Node added to head, value ' + value);
     }
 
     insertAtTail(value){
@@ -45,6 +51,7 @@ class LinkedList{
         // current.next is equal to null right now
         // next part makes a new connection
         current.next = newNode;
+        console.log(`Added ${value} to tail.`)
     };
 
     find(value){
@@ -52,7 +59,7 @@ class LinkedList{
             throw new Error('__ERROR__ List is empty!');
         }
         if (this.head.value === value) {
-            return this.head;
+            return 'We found ' + this.head +'!';
         }
 
         // looping over linked list
@@ -63,6 +70,7 @@ class LinkedList{
                 return current.next;
             }
             current = current.next;
+            console.log('Find found ' + value);
         }
         // if we're here, we didn't find anything
         return null;
@@ -82,9 +90,12 @@ class LinkedList{
                 current = current.next;
             }
             // ... and add a node
-            current.next = node;
+            current.next = newNode;
+            console.log('Appended ' + value);
         }
     }
+
+// might be an overall issue with assigning newNode - need to make sure that the nodes before point to the correct .next
 
     insertBefore(value, newVal){
         // inserts new node with given newValue before Value
@@ -96,14 +107,14 @@ class LinkedList{
         if (this.head.value === value) {
             //unsure about logic here
             current = newNode;
-            current.next = this.head;
+            newNode = this.head;
             return 'New node added before.'
         } else {
             while (current.next){
                 if (current.next.value === value){
                     current = newNode;
                     current.next = this.head;
-                    return 'New node inserted before.';
+                    return `New node with value ${value} inserted before.`;
                 }
                 current = current.next;
             }

@@ -1,7 +1,6 @@
 {
   "name": "6-linkedlist-insert",
   "version": "1.0.0",
-  "description": "",
   "main": "main.js",
   "directories": {
     "lib": "lib"
@@ -21,5 +20,10 @@
   "homepage": "https://github.com/polink/data-structures-and-algorithms#readme",
   "devDependencies": {
     "jest": "^24.1.0"
-  }
+  },
+  "dependencies": {
+    "jest": "^24.1.0"
+  },
+  "keywords": [],
+  "description": ""
 }
