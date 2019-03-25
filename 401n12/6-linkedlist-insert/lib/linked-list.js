@@ -144,7 +144,6 @@ class LinkedList{
             while (current.next) {
                 if (current.next.value === value){
                     current = current.next;
-                    newNode.next = current.next;
                     current.next = newNode;
                     return 'New node inserted after.';
                 }
