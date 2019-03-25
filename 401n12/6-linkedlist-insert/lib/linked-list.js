@@ -37,6 +37,7 @@ class LinkedList{
     insertAtTail(value){
         const newNode = new Node(value);
 
+        // if there isn't a head, set our newNode as the head.
         if(!this.head) {
             this.head = newNode;
             return;
@@ -45,12 +46,14 @@ class LinkedList{
 
         while(current.next) {
             // While we can move to the right
-            current = current.next
+            current = current.next;
+            // console.log(current);
         }
         // Once the while loop is over, then we're at the end
         // current.next is equal to null right now
         // next part makes a new connection
         current.next = newNode;
+        console.log('This one should show the new Node:' + JSON.stringify(current.next));
         console.log(`Added ${value} to tail.`)
     };
 
@@ -79,13 +82,13 @@ class LinkedList{
     append(value){
     // inserts new node with given value to end of list
         const newNode = new Node (value);
-        let current;
+        let current = this.head;
         // if list is empty, make a new Node
         if (this.head === null) {
             this.head = newNode;
         } else {
             // otherwise, this.head goes through the list
-            current = this.head;
+            // current = this.head;
             while (current.next) {
                 current = current.next;
             }
@@ -100,20 +103,23 @@ class LinkedList{
     insertBefore(value, newVal){
         // inserts new node with given newValue before Value
         let newNode = new Node(newVal);
-        let current;
+        let current = this.head;
         if(!this.head) {
             throw new Error ('__ERROR__ List is empty!');
         }
         if (this.head.value === value) {
             //unsure about logic here
+            // current = newNode;
+            current.next = this.head;
             current = newNode;
-            newNode = this.head;
-            return 'New node added before.'
+            return 'New node added before.';
         } else {
             while (current.next){
                 if (current.next.value === value){
-                    current = newNode;
-                    current.next = this.head;
+                    console.log('Current before insertBefore:' + JSON.stringify(current));
+                    newNode.next = current.next;
+                    current.next = newNode;
+                    console.log('Current after insertBefore:' + JSON.stringify(current));
                     return `New node with value ${value} inserted before.`;
                 }
                 current = current.next;
@@ -124,26 +130,41 @@ class LinkedList{
     insertAfter(value, newVal){
     // inserts new node with given newValue after Value
         const newNode = new Node (newVal);
-        let current;
+        let current = this.head;
         if(!this.head) {
             throw new Error ('__ERROR__ List is empty!');
         }
         if (this.head.value === value) {
-            current = this.head;
+            // current = this.head;
             current.next = newNode;
             return 'New node inserted after.';
         } else {
         // otherwise, current goes through the list
-            current = this.head;
+        //     current = this.head;
             while (current.next) {
                 if (current.next.value === value){
                     current = current.next;
+                    newNode.next = current.next;
                     current.next = newNode;
                     return 'New node inserted after.';
                 }
                 current = current.next;
             }
         }
+    }
+    printEntireList() {
+        if (!this.head) {
+            throw new Error('__ERROR__ List is empty!');
+        }
+        // looping over linked list
+        let current = this.head;
+        while (current.next) {
+            //checking if we find the value
+            console.log('Node: Value, ' + current.value + '; Next: ' + current.next);
+            current = current.next;
+        }
+        // if we're here, we didn't find anything
+        return null;
     }
 }
 

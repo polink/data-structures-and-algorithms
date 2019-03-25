@@ -13,7 +13,9 @@ linkedList.insertAtHead(4);
 linkedList.find(2);
 linkedList.insertAtTail(5);
 linkedList.append(10);
-linkedList.insertBefore(10, 9)
+linkedList.insertBefore(10, 9);
+linkedList.insertAfter(10, 6);
+// linkedList.printEntireList();
 
-console.log(linkedList);
+console.log(JSON.stringify(linkedList));
 // logging this will only show two latest nodes?
