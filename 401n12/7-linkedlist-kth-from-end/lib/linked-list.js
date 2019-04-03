@@ -144,19 +144,26 @@ class LinkedList{
     kthFromEnd(k) {
         let current = this.head;
         let counter = 0;
-        // let pointer = current - k;
+
+        // add check that determines if k is 0 or less, or if it's bigger than the linked list
+        // otherwise currently, bigger/smaller #s return 4
         if (!this.head) {
             throw new Error('__ERROR__ List is empty!')
         }
         while (current.next) {
+            let pointer = this.head;
             current = current.next;
             counter++;
             if (current.next === null) {
                 if (counter === k){
-
+                    // pointer = this.head;
+                    while (pointer.next) {
+                        pointer = pointer.next;
+                    }
                 }
                 // if statement of counter !===k, counter++
                 // start pointer when counter === k, when it is k behind current
+                console.log(pointer.value);
                 return pointer.value;
             }
         }

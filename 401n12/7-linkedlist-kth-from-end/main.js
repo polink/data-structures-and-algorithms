@@ -9,4 +9,5 @@ const linkedList = new LinkedList();
 linkedList.insertAtHead(1);
 linkedList.insertAtHead(2);
 linkedList.insertAtHead(3);
-linkedList.kthFromEnd(2);
+linkedList.insertAtHead(4);
+linkedList.kthFromEnd(1);
