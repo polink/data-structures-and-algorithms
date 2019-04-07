@@ -94,6 +94,7 @@ class LinkedList{
             }
             // ... and add a node
             current.next = newNode;
+            return 'added ' + value;
             console.log('Appended ' + value);
         }
     }
@@ -120,7 +121,7 @@ class LinkedList{
                     newNode.next = current.next;
                     current.next = newNode;
                     console.log('Current after insertBefore:' + JSON.stringify(current));
-                    return `New node with value ${value} inserted before.`;
+                    return 'New node added before ' + value;
                 }
                 current = current.next;
             }
