@@ -32,6 +32,7 @@ class LinkedList{
         // 2 - reassigning to HEAD
         this.head = newNode;
         console.log('Node added to head, value ' + value);
+        return `Added ${value} to head`;
     }
 
     insertAtTail(value){
@@ -55,6 +56,7 @@ class LinkedList{
         current.next = newNode;
         console.log('This one should show the new Node:' + JSON.stringify(current.next));
         console.log(`Added ${value} to tail.`)
+        return 'New node added to end of linked list.';
     };
 
     find(value){
@@ -146,7 +148,7 @@ class LinkedList{
                 if (current.next.value === value){
                     current = current.next;
                     current.next = newNode;
-                    return 'New node inserted after.';
+                    return 'New node added after ' + value;
                 }
                 current = current.next;
             }

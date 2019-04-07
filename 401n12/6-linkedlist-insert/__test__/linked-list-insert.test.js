@@ -24,12 +24,12 @@ describe('Linked List Insertion', () => {
        expect(linkedList.insertBefore(2, 5)).toEqual('New node added before 2');
     });
     it('Can successfully insert a node before the first node of a linked list', () => {
-
+        expect(linkedList.insertAtHead(5)).toEqual('Added 5 to head');
     });
     it('Can successfully insert after a node in the middle of the linked list', () => {
-
+        expect(linkedList.insertAfter(2, 5)).toEqual('New node added after 2');
     });
     it('Can successfully insert a node after the last node of the linked list', () => {
-
+        expect(linkedList.insertAtTail(5)).toEqual('New node added to end of linked list.');
     });
 });
