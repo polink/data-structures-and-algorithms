@@ -10,4 +10,5 @@ linkedList.insertAtHead(1);
 linkedList.insertAtHead(2);
 linkedList.insertAtHead(3);
 linkedList.insertAtHead(4);
-linkedList.kthFromEnd(1);
+linkedList.kthFromEnd(4);
+console.log(JSON.stringify(linkedList));
