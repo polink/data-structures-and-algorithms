@@ -1,14 +1,6 @@
 'use strict';
 
-class Node {
-    constructor (value, next){
-        this.value = value;
-        this.next = next;
-    }
-    pointer(node){
-        this.next = node;
-    }
-}
+const Node = require('./node.js');
 
 class Stack {
     constructor(){
@@ -19,7 +11,7 @@ class Stack {
     push(value) {
         let nextTop = new Node(value);
         nextTop.pointer(this.top);
-        this.top = newTop;
+        this.top = nextTop;
     }
 
     pop(){
@@ -32,6 +24,7 @@ class Stack {
     }
 
     peek(){
+        console.log(this.top.value);
         return this.top.value;
     }
 }
@@ -42,6 +35,8 @@ class Queue {
     }
 
     enqueue (value) {
+        let newLine = new Node(value);
+
         // adds a new node with this value to back of queue
         // O(1) time performance?
 
@@ -56,3 +51,5 @@ class Queue {
         // need reference to node?
     }
 }
+
+module.exports = Stack, Queue;
