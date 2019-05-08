@@ -1,9 +1,8 @@
 'use strict';
 
-let clas = require('./lib/stacks-and-queues');
 const Node = require('./lib/node');
-const Stack = clas.Stack;
-const Queue = clas.Queue;
+const Stack = require('./lib/stack');
+const Queue = require('./lib/queue');
 
 const stack = new Stack();
 
@@ -21,3 +20,4 @@ queue.enqueue(2);
 queue.peek();
 queue.dequeue();
 
+console.log(JSON.stringify(queue))
