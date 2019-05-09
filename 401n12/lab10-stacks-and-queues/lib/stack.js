@@ -19,8 +19,8 @@ class Stack {
         let popTop = this.top;
         this.top = this.top.next; // i think this will return the next one in the stack instead of the current one.
         popTop.pointer(null);
-        // return node's value?
         // return this.top.value;
+        // return node's value?
     }
 
     peek(){
