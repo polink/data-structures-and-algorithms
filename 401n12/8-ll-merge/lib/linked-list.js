@@ -163,6 +163,40 @@ class LinkedList{
         return null; // is this necessary?
     }
 
+    // mergeList(list1, list2) {
+    //     let current = list1.head;
+    //     let curOne = current.next;
+    //     let curTwo = list2.head.next;
+    //
+    //     // if (curOne.next || curTwo.next !==null){
+    //     //    change this into an else if series checking if either LL is empty
+    //     while(curOne.value && curTwo.value){
+    //         current.next= curOne;
+    //         curOne = curOne.next; // advance list1
+    //         current = current.next; // advance current
+    //         current.next = curTwo;
+    //         curTwo = curTwo.next;
+    //         // curTwo = curTwo.next; // advance list2
+    //         current = current.next; // advance current
+    //     }
+    //     if (curOne.value !== null) {
+    //         current.next = curOne;
+    //         return list1.head;
+    //     } else if (curTwo.value !== null) {
+    //         current.next = curTwo;
+    //         return list1.head;
+    //     } else {
+    //         return list1.head;
+    //     }
+    //         // need to write part of function that covers if one list is shorter than the other
+    //         // something about if list.next === null, iterate on the remaining list.
+    //         /* } else if (true === true) {
+    //         current.value = list.value;
+    //         current.next = list.next;
+    //         current = current.next;
+    //         */
+    // }
+
     printEntireList() {
         if (!this.head) {
             throw new Error('__ERROR__ List is empty!');
