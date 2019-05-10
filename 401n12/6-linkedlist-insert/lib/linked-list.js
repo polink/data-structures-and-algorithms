@@ -2,27 +2,10 @@
 
 const Node = require('./node');
 
-/* SUMMARY
-
-Variables
-    HEAD
-
-Behavior
-    Insert Values ->
-    Remove Values
-    Interate/Loop
- */
-
 class LinkedList{
     constructor(){
         this.head = null;
     }
-// to do 3/20
-//    ran base code, insertHead, append and Tail works, as well as find.
-    // insertAfter borks, need to check insertBefore
-// to do 3/10
-// clean up use of this.head - looks like i'm using it wrong
-// double-check logic around inserts - re-read CF LL article?
 
     insertAtHead(value){
         const newNode = new Node(value);

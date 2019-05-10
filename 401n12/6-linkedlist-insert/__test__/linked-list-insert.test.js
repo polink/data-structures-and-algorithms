@@ -18,7 +18,9 @@ describe('Linked List Insertion', () => {
         expect(linkedList.append(100)).toEqual('added 100');
     });
     it('Can successfully add multiple nodes to the end of a linked list',() => {
-        expect().to();
+        expect(linkedList.append(50)).toEqual('added 50');
+        expect(linkedList.append(22)).toEqual('added 22');
+        expect(linkedList.append(6)).toEqual('added 6');
     });
     it('Can successfully insert a node before a node located in the middle of a linked list', () => {
        expect(linkedList.insertBefore(2, 5)).toEqual('New node added before 2');
