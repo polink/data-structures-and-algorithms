@@ -13,5 +13,17 @@ class BinaryTree {
         inOrder(root.right);
     }
 
-    preOrder(root){}
+    preOrder(root){
+        console.log(root);
+        preOrder(root.left);
+        preOrder(root.right);
+    }
+
+    postOrder(root){
+        postOrder(root.left);
+        postOrder(root.right);
+        console.log(root);
+    }
 }
+
+module.exports = BinaryTree;
