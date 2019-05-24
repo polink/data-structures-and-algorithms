@@ -1,6 +1,7 @@
 'use strict';
 
 const Node = require('./node');
+const Queue = require('./queue');
 const BinaryTree = require('./tree');
 
 function breadthFirst(tree) {
@@ -10,6 +11,7 @@ function breadthFirst(tree) {
     queue.enqueue(tree.root);
     while(queue.front !== null){
         let str = queue.dequeue();
+        console.log(queue.dequeue());
         output += str + ' ,';
 
         if(str.left){
@@ -22,3 +24,5 @@ function breadthFirst(tree) {
         console.log(output);
     }
 }
+
+module.exports = breadthFirst;

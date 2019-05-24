@@ -11,8 +11,8 @@ class Queue {
     enqueue(value) {
         if (this.front === null && this.back === null){
             let newLine = new Node(value);
-            this.front = newLine;
-            this.back = newLine;
+            this.front = value;
+            this.back = value;
         } else {
             let current = this.back;
             current.next = new Node(value);
@@ -22,13 +22,13 @@ class Queue {
 
     dequeue() {
         let current = this.front;
-        if(this.front === null || this.front.next === null){
+        if(!current){
             this.front === null;
             this.back === null;
         } else {
             this.front = this.front.next;
         }
-        return current;
+        return current.value;
     }
 
     peek(){
