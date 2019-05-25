@@ -32,6 +32,7 @@ class BinaryTree {
         };
         this.findMax(root.left);
         this.findMax(root.right);
+        // this.findMax(inOrder(root));
     }
 }
 
