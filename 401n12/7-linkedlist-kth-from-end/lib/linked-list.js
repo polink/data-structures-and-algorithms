@@ -170,6 +170,44 @@ class LinkedList{
         return null; // is this necessary?
     }
 
+    // Alistair's study session code
+    kthEndAB (k) {
+        let counter = 1;
+        let current = this.head;
+
+        while (current.next) {
+            current = current.next;
+            counter++;
+        }
+
+        let runK = counter-k; // Ryan - recommend calling runK target instead
+        if (runK === 0) {
+            return this.head.value;
+        } else if (runK < 0) {
+            return 'K too big!';
+        } else {
+            counter = 0;
+            current = this.head;
+            while (counter < runK) {
+                current = current.next;
+                counter++;
+            }
+            return current.value;
+        }
+    }
+
+    kthFromEndArray (k) {
+        let kArray = [];
+        let current = this.head;
+
+        while (current) { // Ryan - using current is better than current.next, because otherwise the final node will be ignored
+            kArray.push(current.value); // O(n) here on push, O(n)Space for how many elements in the array
+            // Kris - make sure to define N in an interview setting
+            current = current.next;
+        }
+        return kArray[kArray.length-k];
+    }
+
     printEntireList() {
         if (!this.head) {
             throw new Error('__ERROR__ List is empty!');
@@ -184,6 +222,7 @@ class LinkedList{
         // if we're here, we didn't find anything
         return null;
     }
+
 }
 
 module.exports = LinkedList;
