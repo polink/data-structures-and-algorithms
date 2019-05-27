@@ -33,18 +33,36 @@ class BinaryTree {
         if (this.root){
 
             queue.enqueue(this.root);
-            while(queue.front){
-                if(queue.front.left){
-                    queue.enqueue(queue.front.left);
+            while(queue.peek()){ // accidentally made an infLoop here - need a different parameter
+                if(this.left){
+                    queue.enqueue(this.left);
                 }
-                if(queue.front.right){
-                    queue.enqueue(queue.front.right);
+                if(this.right){
+                    queue.enqueue(this.right);
                 }
                 // output += queue.dequeue() + ' ,';
                 queue.dequeue();
                 // console.log(output);
             }
         }
+    }
+    // from 0527 study session
+    // Ryan - remember to mention if you're going in a direction (like w/ using Arrays) since it's a direction you know
+    breadthArray() {
+        let arrayBT = [];
+        let queue = new Queue();
+        queue.enqueue(this.root);
+        while (queue.peek()) {
+            arrayBT.push(queue.front.value); // push top array
+            if(this.left){ // check left
+                queue.enqueue(this.left);
+            }
+            if(this.right){ // check right
+                queue.enqueue(this.right);
+            }
+            queue.dequeue(); // dequeue
+        }
+        return arrayBT;
     }
 }
 

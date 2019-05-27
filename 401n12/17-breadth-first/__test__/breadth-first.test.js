@@ -34,7 +34,8 @@ describe('Breadth-First Traversal', () => {
     e.left = h;
 
     it('HAPPY PATH: Can successfully output breadth first traversal.', () => {
-        expect(tree.breadthFirst()).toEqual('2, 7, 5, 2, 6, 9, 5, 11, 4 ');
+        // expect(tree.breadthFirst()).toEqual('2, 7, 5, 2, 6, 9, 5, 11, 4 ');
+        expect(tree.breadthArray()).toEqual('2, 7, 5, 2, 6, 9, 5, 11, 4 ');
         // console.log(JSON.stringify(breadthFirst(tree)));
     });
     xit('Expected Flailure: The given tree is not null, test is expecting null.', () => {
