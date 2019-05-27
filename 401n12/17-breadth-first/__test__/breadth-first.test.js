@@ -3,7 +3,7 @@
 const Node = require('../lib/node');
 const Queue = require('../lib/queue');
 const BinaryTree = require('../lib/tree');
-const breadthFirst = require('../lib/breadth-first');
+// const breadthFirst = require('../lib/breadth-first');
 
 /*
 # Unit Tests
@@ -15,7 +15,7 @@ const breadthFirst = require('../lib/breadth-first');
 describe('Breadth-First Traversal', () => {
 
     const tree = new BinaryTree(2);
-    console.log(tree);
+    // console.log(tree);
     // adding tree nodes
     const a = new Node(7);
     const b = new Node(5);
@@ -34,14 +34,14 @@ describe('Breadth-First Traversal', () => {
     e.left = h;
 
     it('HAPPY PATH: Can successfully output breadth first traversal.', () => {
-        expect(breadthFirst(tree)).toEqual('2, 7, 5, 2, 6, 9, 5, 11, 4 ');
-        console.log(JSON.stringify(breadthFirst(tree)));
+        expect(tree.breadthFirst()).toEqual('2, 7, 5, 2, 6, 9, 5, 11, 4 ');
+        // console.log(JSON.stringify(breadthFirst(tree)));
     });
-    it('Expected Flailure: The given tree is not null, test is expecting null.', () => {
-        expect(breadthFirst(tree)).toBeNull;
+    xit('Expected Flailure: The given tree is not null, test is expecting null.', () => {
+        expect(breadthFirst()).toBeNull;
     });
-    it('Edge Case: Will not take in any other data structures other than Binary Trees.', () => {
+    xit('Edge Case: Will not take in any other data structures other than Binary Trees.', () => {
         let testQ = new Queue();
-        expect(breadthFirst(testQ)).toBeFalsy;
+        expect(breadthFirst()).toBeFalsy;
     })
 });

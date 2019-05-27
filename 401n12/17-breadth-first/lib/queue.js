@@ -11,8 +11,8 @@ class Queue {
     enqueue(value) {
         if (this.front === null && this.back === null){
             let newLine = new Node(value);
-            this.front = value;
-            this.back = value;
+            this.front = newLine;
+            this.back = newLine; // test if this breaks further, was only inputting one value into queue
         } else {
             let current = this.back;
             current.next = new Node(value);
@@ -22,13 +22,15 @@ class Queue {
 
     dequeue() {
         let current = this.front;
-        if(!current){
-            this.front === null;
+        // console.log(current);
+        if(this.front === null || this.front.next === null){
+            // this.front === null;
             this.back === null;
+            return null;
         } else {
             this.front = this.front.next;
         }
-        return current.value;
+        return current;
     }
 
     peek(){
