@@ -26,12 +26,28 @@ class BinaryTree {
         console.log(root);
     }
 
-    findMax(root){
-        if(root>this.max){
-            this.max = root.value;
-        };
-        this.findMax(root.left);
-        this.findMax(root.right);
+    findMax(tree){
+        if(!tree.root){
+            return;
+        }
+        let highValue = tree.root.value;
+        
+        function recurse(node) = {
+            if(node.value>highValue){
+                highValue=node.value;
+            }
+        }
+        if (node.left) {recurse(node.left)}
+        if (node.right) {recurse(node.right)}
+        recurse(tree);
+        
+        return highValue;
+        
+        // if(root>this.max){
+        //     this.max = root.value;
+        // };
+        // this.findMax(root.left);
+        // this.findMax(root.right);
         // this.findMax(inOrder(root));
     }
 }
