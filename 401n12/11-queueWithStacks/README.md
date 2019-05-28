@@ -8,5 +8,5 @@ Make a pseudoqueue class that uses 2 stack problems instead.
 ## Approach and Efficiency
 
 ## Solution
-[whiteboard](./assets/whiteboard.jpg/)
-[whiteboard](./assets/queueswithstacksstudy.jpg/)
+![whiteboard](./assets/whiteboard.jpg)
+![whiteboard](./assets/queueswithstacksstudy.jpg)
