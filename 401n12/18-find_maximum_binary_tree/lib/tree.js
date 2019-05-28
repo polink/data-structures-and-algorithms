@@ -27,7 +27,12 @@ class BinaryTree {
     }
 
     findMax(root){
-        if(root>this.max){
+
+        if(root === null) {
+            return this.max;
+        };
+
+        if(root.value>this.max){
             this.max = root.value;
         };
         this.findMax(root.left);
