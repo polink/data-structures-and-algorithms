@@ -8,3 +8,5 @@ Write a breadth first traversal method which takes a Binary Tree as its unique i
 ## Approach and Efficiency
 
 ## Solution
+![initial whiteboard](./assets/20190523_163730.jpg)
+![study session whiteboard](./assets/breadthfirststudy.jpg)
