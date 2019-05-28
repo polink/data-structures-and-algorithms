@@ -6,4 +6,4 @@ module.exports = class Node {
         this.right = null;
         this.left = null;
     }
-}
+};
