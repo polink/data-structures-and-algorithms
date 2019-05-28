@@ -23,18 +23,18 @@ describe('BINARY TREE: Finding Maximum Value' , () => {
     const i = new Node(4)
     // create tree
     const tree = new BinaryTree(a);
-    console.log(tree);
+    // console.log(tree);
     // setting node positioning
     a.left = b; a.right = c;
     b.left = d; b.right = e;
     e.left = g; e.right = h;
     c.right = f;
     f.left = i;
-    console.log(tree.root)
+    // console.log(tree.root)
 
     it('HAPPY PATH: Is able to find the maximum value in the tree.', () => {
-        console.log(tree.findMax());
-        expect(1).toBeTruthy;
+        // console.log(tree.findMax());
+        expect(tree.findMax(a)).toEqual(11);
     });
     // it('Expected Flailure', () => {
     //     expect().;
