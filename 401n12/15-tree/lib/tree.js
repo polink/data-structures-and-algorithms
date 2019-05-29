@@ -52,6 +52,10 @@ class Tree {
 
         return nodes;
     }
+
+    postOrder(){
+        
+    }
 }
 
 /*
