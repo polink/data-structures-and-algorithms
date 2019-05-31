@@ -54,7 +54,24 @@ class Tree {
     }
 
     postOrder(){
-        
+        let nodes = [];
+
+        function _walk(node){
+
+            if(node === null){return;}
+
+            if(node.left){
+                _walk(node.left);
+            }
+            if(node.right){
+                _walk(node.right);
+            }
+            nodes.push(node.value);
+        }
+
+        _walk(this.root);
+
+        return nodes;
     }
 }
 
