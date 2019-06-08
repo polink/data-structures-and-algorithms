@@ -10,28 +10,55 @@ class BST extends Tree {
     }
 
     add(node, value){
-        node = new Node;
-        node.value = value;
+        let newNode = new Node;
+        newNode.value = value;
 
-        if(!this.root){
-            this.root = node;
-            return;
-        }
-        let current = this.root;
+        function _walk (node, value){
+            // Base Case to stop recursion
+            if (node === null){
+                node = newNode;
+                return;}
 
-        if (node.value > current.value) {
-            if(!current.right){
-                current.right = node;
+            if (this.root === null){
+                this.root = node;
+                return 'Node added at root';
+            }
+            // code for left half of BST
+            if (node.left.value > value) {
+                // if the left node is greater than the value, go left and keep going left
+                _walk(node.left);
+            } else if (node.left.value < value) {
+                // else if value is greater than left...
+                _walk(node.right);
             }
 
-            current = current.right;
-        } else {
-            if(!current.left){
-                current.left = node;
+            // code for right half of BST
+            if (node.right.value < value) {
+                _walk(node.right);
+            } else if (node.right.value > value) {
+                _walk(node.left);
             }
-
-            current = current.left;
         }
+
+        // if(!this.root){
+        //     this.root = node;
+        //     return;
+        // }
+        // let current = this.root;
+        //
+        // if (node.value > current.value) {
+        //     if(!current.right){
+        //         current.right = node;
+        //     }
+        //
+        //     current = current.right;
+        // } else {
+        //     if(!current.left){
+        //         current.left = node;
+        //     }
+        //
+        //     current = current.left;
+        // }
     }
 
     contains(value){
