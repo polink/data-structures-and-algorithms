@@ -15,9 +15,6 @@ Define a method named contains that accepts a value, and returns a boolean indic
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-![study session 05/28](https://github.com/polink/data-structures-and-algorithms/blob/master/401n12/15-tree/assets/20190528_200248.jpg)
-![study session 05/28](https://github.com/polink/data-structures-and-algorithms/blob/master/401n12/15-tree/assets/20190528_200250.jpg)
-![sample tree](https://github.com/polink/data-structures-and-algorithms/blob/master/401n12/15-tree/assets/20190530_210443.jpg)
 
 ## API
 <!-- Description of each method publicly available in each of your trees -->
