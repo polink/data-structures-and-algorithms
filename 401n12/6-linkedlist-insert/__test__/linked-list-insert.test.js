@@ -34,4 +34,7 @@ describe('Linked List Insertion', () => {
     it('Can successfully insert a node after the last node of the linked list', () => {
         expect(linkedList.insertAtTail(5)).toEqual('New node added to end of linked list.');
     });
+    it('Can find the the first value in a list', () => {
+        expect(linkedList.find(1)).toStrictEqual('We found 2!');
+    });
 });

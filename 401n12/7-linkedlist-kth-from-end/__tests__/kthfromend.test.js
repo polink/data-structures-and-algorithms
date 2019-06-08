@@ -18,9 +18,10 @@ Where the linked list is of a size 1
 describe('Linked Lists', () => {
 
     it('Where is k is greater than the length of the linked list', () =>{
-        expect().toEqual();
+        expect(linkedList.kthEndAB(4)).toEqual('K too big!');
     });
     it('Where k and the length of the list are the same', () =>{
+        expect(linkedList.kthEndAB(3)).toEqual(1);
     });
     it('Where k is not a positive integer', () =>{
     });

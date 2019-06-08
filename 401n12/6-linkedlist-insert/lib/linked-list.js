@@ -38,7 +38,7 @@ class LinkedList{
         // next part makes a new connection
         current.next = newNode;
         console.log('This one should show the new Node:' + JSON.stringify(current.next));
-        console.log(`Added ${value} to tail.`)
+        console.log(`Added ${value} to tail.`);
         return 'New node added to end of linked list.';
     };
 
@@ -55,7 +55,7 @@ class LinkedList{
         while (current.next) {
             //checking if we find the value
             if (current.next.value === value) {
-                return current.next;
+                return 'We found ' + current.next.value +'!';
             }
             current = current.next;
             console.log('Find found ' + value);
@@ -102,8 +102,10 @@ class LinkedList{
         } else {
             while (current.next){
                 if (current.next.value === value){
+                    let pointer = current;
                     console.log('Current before insertBefore:' + JSON.stringify(current));
                     newNode.next = current.next;
+                    // this needs an eventual fix - insertBefore actually inserts after!
                     current.next = newNode;
                     console.log('Current after insertBefore:' + JSON.stringify(current));
                     return 'New node added before ' + value;
@@ -122,6 +124,7 @@ class LinkedList{
         }
         if (this.head.value === value) {
             // current = this.head;
+            newNode.next = current.next;
             current.next = newNode;
             return 'New node inserted after.';
         } else {

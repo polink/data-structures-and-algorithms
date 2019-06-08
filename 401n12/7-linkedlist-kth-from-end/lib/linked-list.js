@@ -29,13 +29,13 @@ class LinkedList{
     }
 
     insertAtTail(value){
-        const neNode = newNode(value);
+        const newNode = new Node(value);
 
         if(!this.head) {
             this.head = newNode;
             return;
         }
-        let current = this.head
+        let current = this.head;
 
         while(current.next) {
             // While we can move to the right
@@ -147,6 +147,7 @@ class LinkedList{
 
         // add check that determines if k is 0 or less, or if it's bigger than the linked list
         // otherwise currently, bigger/smaller #s return 4
+        // as of 6/7 partially working, making tests out of the following function, kthEndAB
         if (!this.head) {
             throw new Error('__ERROR__ List is empty!')
         }
@@ -181,6 +182,7 @@ class LinkedList{
         }
 
         let runK = counter-k; // Ryan - recommend calling runK target instead
+        // if (runK < 0) {return null;}
         if (runK === 0) {
             return this.head.value;
         } else if (runK < 0) {
