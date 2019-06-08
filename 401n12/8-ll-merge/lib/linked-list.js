@@ -29,13 +29,13 @@ class LinkedList{
     }
 
     insertAtTail(value){
-        const neNode = newNode(value);
+        const newNode = new Node(value);
 
         if(!this.head) {
             this.head = newNode;
             return;
         }
-        let current = this.head
+        let current = this.head;
 
         while(current.next) {
             // While we can move to the right
