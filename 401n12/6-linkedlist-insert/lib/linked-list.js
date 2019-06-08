@@ -2,10 +2,27 @@
 
 const Node = require('./node');
 
+/* SUMMARY
+
+Variables
+    HEAD
+
+Behavior
+    Insert Values ->
+    Remove Values
+    Interate/Loop
+ */
+
 class LinkedList{
     constructor(){
         this.head = null;
     }
+// to do 3/20
+//    ran base code, insertHead, append and Tail works, as well as find.
+    // insertAfter borks, need to check insertBefore
+// to do 3/10
+// clean up use of this.head - looks like i'm using it wrong
+// double-check logic around inserts - re-read CF LL article?
 
     insertAtHead(value){
         const newNode = new Node(value);
@@ -15,7 +32,6 @@ class LinkedList{
         // 2 - reassigning to HEAD
         this.head = newNode;
         console.log('Node added to head, value ' + value);
-        return `Added ${value} to head`;
     }
 
     insertAtTail(value){
@@ -39,7 +55,6 @@ class LinkedList{
         current.next = newNode;
         console.log('This one should show the new Node:' + JSON.stringify(current.next));
         console.log(`Added ${value} to tail.`)
-        return 'New node added to end of linked list.';
     };
 
     find(value){
@@ -79,7 +94,6 @@ class LinkedList{
             }
             // ... and add a node
             current.next = newNode;
-            return 'added ' + value;
             console.log('Appended ' + value);
         }
     }
@@ -106,7 +120,7 @@ class LinkedList{
                     newNode.next = current.next;
                     current.next = newNode;
                     console.log('Current after insertBefore:' + JSON.stringify(current));
-                    return 'New node added before ' + value;
+                    return `New node with value ${value} inserted before.`;
                 }
                 current = current.next;
             }
@@ -131,7 +145,7 @@ class LinkedList{
                 if (current.next.value === value){
                     current = current.next;
                     current.next = newNode;
-                    return 'New node added after ' + value;
+                    return 'New node inserted after.';
                 }
                 current = current.next;
             }
