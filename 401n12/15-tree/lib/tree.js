@@ -3,8 +3,8 @@
 const Node = require('./node');
 
 class Tree {
-    constructor(){
-        this.root = null;
+    constructor(node){
+        this.root = node;
     }
 
     preOrder(){

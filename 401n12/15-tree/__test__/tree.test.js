@@ -32,7 +32,7 @@ douglas.root = leaf;
 describe('Binary Trees', () => {
     it('Can successfully instantiate an empty tree',() => {
         let conifer = new Tree;
-        expect(conifer.root).toBe(null);
+        expect(conifer.root).toBe(undefined);
 
     });
     it('Can successfully instantiate a tree with a single root node',() => {
@@ -62,37 +62,41 @@ describe('Binary Trees', () => {
 
 describe('Binary Search Trees', () => {
     let bsTree = new BST();
-    let g = new Node(10);
-    let h = new Node(20);
     let bsRoot = new Node(15);
-    let j = new Node(18);
-    let k = new Node(7);
     bsTree.root = bsRoot;
 
     it('Correctly assigned BST nodes to their proper places', () => {
-       bsTree.add(a,20);
-       bsTree.add(b,10);
-       bsTree.add(c,18);
-       bsTree.add(d,7);
-       console.log(bsTree);
-        console.log(JSON.stringify(bsTree));
-        expect(bsTree.root.right.right.value).toBe(20);
+       bsTree.add(bsTree.root,20);
+       bsTree.add(bsTree.root,10);
+       bsTree.add(bsTree.root,18);
+       bsTree.add(bsTree.root,7);
+       console.log(bsTree.root);
+       console.log(JSON.stringify(bsTree));
+       expect(bsTree.root.value).toBe(15);
+       expect(bsTree.root.right.value).toBe(20);
+       expect(bsTree.root.left.value).toBe(10);
+       expect(bsTree.root.right.left.value).toBe(18);
        expect(bsTree.root.left.left.value).toBe(7);
     });
-    // it('Can successfully add a left child and right child to a single root node', () => {
-    //     expect(douglas.root.left.value).toBe(5);
-    //     expect(douglas.root.right.value).toBe(8);
-    // });
-    // it('Can successfully return a collection from a preorder traversal', () => {
-    //     // console.log(tree.preOrder());
-    //     expect(tree.preOrder()).toStrictEqual([1, 2, 4, 5, 3, 6]);
-    // });
-    // it('Can successfully return a collection from an inorder traversal', () => {
-    //     // console.log(tree.inOrder());
-    //     expect(tree.inOrder()).toStrictEqual([4, 2, 5, 1, 6, 3]);
-    // });
-    // it('Can successfully return a collection from a postorder traversal', () => {
-    //     console.log(tree.postOrder());
-    //     expect(tree.postOrder()).toStrictEqual([4, 5, 2, 6, 3, 1]);
-    // });
+    it('Can successfully add a left child and right child to a single root node', () => {
+        let tree2 = new BST();
+        let tree2root = new Node(5);
+        tree2.root = tree2root;
+        tree2.add(tree2.root, 2);
+        tree2.add(tree2.root, 8);
+        expect(tree2.root.left.value).toBe(2);
+        expect(tree2.root.right.value).toBe(8);
+    });
+    it('Can successfully return a collection from a preorder traversal', () => {
+        // console.log(tree.preOrder());
+        expect(tree.preOrder()).toStrictEqual([1, 2, 4, 5, 3, 6]);
+    });
+    it('Can successfully return a collection from an inorder traversal', () => {
+        // console.log(tree.inOrder());
+        expect(tree.inOrder()).toStrictEqual([4, 2, 5, 1, 6, 3]);
+    });
+    it('Can successfully return a collection from a postorder traversal', () => {
+        console.log(tree.postOrder());
+        expect(tree.postOrder()).toStrictEqual([4, 5, 2, 6, 3, 1]);
+    });
 });
