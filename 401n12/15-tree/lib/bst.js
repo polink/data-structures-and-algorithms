@@ -5,15 +5,16 @@ const Tree = require('./tree');
 
 class BST extends Tree {
     constructor(){
-        this.root = null;
+        super();
+        // this.count = 1; (size() {return this.count;} function to count size of BST or tree
     }
 
     add(node, value){
         node = new Node;
-        value = node.value;
+        node.value = value;
 
         if(!this.root){
-            this.root = value;
+            this.root = node;
             return;
         }
         let current = this.root;
@@ -43,7 +44,7 @@ class BST extends Tree {
         let current = this.root;
 
         while(current.value !== value){
-            if (current === null) {
+            if (current === null) { // base case, but it's borked! likely need recursion for this
                 return null;
             } else if (value > current.value) {
                 current = current.right;
