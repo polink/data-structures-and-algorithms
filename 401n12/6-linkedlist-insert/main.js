@@ -17,4 +17,5 @@ linkedList.insertBefore(10, 9);
 linkedList.insertAfter(10, 6);
 // linkedList.printEntireList();
 
+
 console.log(JSON.stringify(linkedList));

@@ -34,4 +34,8 @@ describe('Linked List Insertion', () => {
     it('Can successfully insert a node after the last node of the linked list', () => {
         expect(linkedList.insertAtTail(5)).toEqual('New node added to end of linked list.');
     });
+    // it('Will throw an error if you try to find in an empty/null list', () => {
+    //     let ll = new LinkedList();
+    //     expect(ll.find(6)).toThrow('__ERROR__ List is empty!');
+    // }); attempted to add this 7/1
 });
