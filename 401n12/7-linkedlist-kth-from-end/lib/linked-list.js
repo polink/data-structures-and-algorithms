@@ -163,7 +163,7 @@ class LinkedList{
                 }
                 // if statement of counter !===k, counter++
                 // start pointer when counter === k, when it is k behind current
-                console.log(pointer.value);
+                // console.log(pointer.value);
                 return pointer.value;
             }
         }
@@ -184,6 +184,7 @@ class LinkedList{
         if (runK === 0) {
             return this.head.value;
         } else if (runK < 0) {
+            throw new Error('K too big!');
             return 'K too big!';
         } else {
             counter = 0;
@@ -192,6 +193,7 @@ class LinkedList{
                 current = current.next;
                 counter++;
             }
+            // console.log(counter);
             return current.value;
         }
     }
