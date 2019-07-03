@@ -19,5 +19,7 @@ queue.enqueue(1);
 queue.enqueue(2);
 queue.peek();
 queue.dequeue();
+queue.dequeue();
+queue.peek();
 
-console.log(JSON.stringify(queue))
+console.log(JSON.stringify(queue));

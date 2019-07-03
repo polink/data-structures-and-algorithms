@@ -24,8 +24,8 @@ class Queue {
 
     dequeue(){
         //removes node from front of queue, return value of node
-        if (this.front === null || this.front.next === null){
-            this.front === null;
+        if (this.front.value === null && this.front.next.value === null){
+            // this.front === null;
             this.back === null;
         } else {
             this.front = this.front.next;
@@ -33,6 +33,7 @@ class Queue {
     }
 
     peek() {
+        // console.log(this.front.value);
         return this.front.value;
         // need reference to node?
     }

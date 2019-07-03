@@ -31,6 +31,7 @@ describe('stack', () => {
         testingStack.pop();
         testingStack.pop();
         testingStack.pop();
+        // console.log(testingStack.top.value);
         expect(testingStack.top).toBeNull();
     });
 
@@ -75,7 +76,7 @@ describe('queue', () => {
         testingQueue.dequeue();
         testingQueue.dequeue();
         testingQueue.dequeue();
-        // console.log(JSON.stringify(testingQueue));
+        console.log(JSON.stringify(testingQueue));
         // testingQueue.dequeue();
         expect(testingQueue.back).toBeNull();
         expect(testingQueue.front).toBeNull();
