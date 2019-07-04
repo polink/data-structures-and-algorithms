@@ -95,4 +95,7 @@ describe('Binary Search Trees', () => {
     //     console.log(tree.postOrder());
     //     expect(tree.postOrder()).toStrictEqual([4, 5, 2, 6, 3, 1]);
     // });
+    it('Can use its contain() function to determine if a value is in the BST.', () => {
+        expect(bsTree.contains(18)).toBeTrue();
+    });
 });
